@@ -160,7 +160,7 @@ LCD_SIZE_W = 240
 LCD_SIZE_H = 240
 
 
-# 初始化lvgl
+# Initialize lvgl
 lv.init()
 
 # Register SDL display driver.
@@ -175,11 +175,11 @@ disp_drv.hor_res = LCD_SIZE_W
 disp_drv.ver_res = LCD_SIZE_H
 disp_drv.register()
 
-# CST816初始化
+# CST816 initialization
 # tp_cst816 = cst816(i2c_no=0,irq=12,reset=16)
 tp_cst816 = cst816(i2c_no=0,irq=12,reset=16, addr=0x38, y_reverse=1)
 tp_cst816.activate()
-# LVGL触摸注册
+# LVGL Touch Registration
 indev_drv = lv.indev_drv_t()
 indev_drv.init()
 indev_drv.type = lv.INDEV_TYPE.POINTER
@@ -189,5 +189,5 @@ indev_drv.register()
 tp_gpio = Pin(Pin.GPIO12, Pin.OUT, Pin.PULL_PU, 0)
 
 lcd_bl_gpio = Pin(Pin.GPIO15, Pin.OUT, Pin.PULL_DISABLE, 1)
-# 启动lvgv线程
+# Start lvgl thread
 lv.tick_inc(5)

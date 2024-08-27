@@ -8,14 +8,14 @@ Power.camVDD2V8Enable(1)
 
 def indev_task(tp_dev):
     global index
-    print("触摸事件监听开始")
+    print("Touch event monitoring starts")
     while 1:
         pos_s = tp_dev.read_xy()
         if pos_s:
-            print("触摸事件发生,x is {},y is {}".format(pos_s[0],pos_s[1]))
+            print("Touch event occurs,x is {},y is {}".format(pos_s[0],pos_s[1]))
             utime.sleep_ms(100)
         else:
-            print("触摸事件未发生,继续监听")
+            print("Touch event did not occur, continue monitoring")
             utime.sleep_ms(100)
 
 

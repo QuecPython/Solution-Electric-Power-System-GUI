@@ -6,11 +6,11 @@ from machine import Pin, KeyPad, ExtInt
 from misc import PowerKey, Power
 
 """
-矩阵键盘初始化
-按键触发功能响应
+Matrix keyboard initialization
+Key triggered function response
 
-KeypadEvent :按键码
-KeypadManager:按键事件处理
+KeypadEvent :Key code
+KeypadManager:Key event handling
 """
 class KeyProcess5(object):
     DEBOUNCE_TIMEOUT = 10
@@ -19,10 +19,10 @@ class KeyProcess5(object):
     def __init__(self, keystype, gpio_num, callback, release_callback=None, LongTimeout=2000, LongCallback=None,
                  PressStatus=0):
         self.__key = ExtInt(gpio_num, ExtInt.IRQ_RISING_FALLING, ExtInt.PULL_PU, self.__extint_cb)
-        self.__key.enable()  # 按键中断使能
+        self.__key.enable()  # Button interrupt enable
         self.__gpio_num = gpio_num
         self.__PressStatus = PressStatus
-        self.__debounceTimer = osTimer()  # 定时器0
+        self.__debounceTimer = osTimer()  # Timer 0
         self.__longTimer = osTimer()
         self.__preCount = 0
         self.__longTimeout = LongTimeout
@@ -35,15 +35,15 @@ class KeyProcess5(object):
 
     def __extint_cb(self, args):
         self.__longTimer.stop()
-        self.__key.disable()  # 按键关中断
-        # 启动定时器0,mode=1 周期执行
+        self.__key.disable()  # Press the button to turn off the interrupt
+        # Start timer 0, mode=1 cycle execution
         self.__debounceTimer.start(self.DEBOUNCE_TIMEOUT, 1, self.__debounce_handle)
 
     def __goBack(self):
         if self.__release_callback:
             self.__release_callback(self.__gpio_num)
         self.__preCount = 0
-        self.__debounceTimer.stop()  # 定时器0关闭
+        self.__debounceTimer.stop()  # Timer 0 is turned off
         self.__key.enable()
 
     def __LongHandle(self, args):
@@ -55,15 +55,15 @@ class KeyProcess5(object):
         else:
             self.__goBack()
 
-    def __debounce_handle(self, args):  # 防反跳
+    def __debounce_handle(self, args):  # Anti bounce
         # print("__debounce_handle:self.__PressStatus{}".format(self.__PressStatus))
-        if self.__key.read_level() == self.__PressStatus:  # 读取当前管脚电平
+        if self.__key.read_level() == self.__PressStatus:  # Read the current pin level
             self.__preCount += 1
         else:
             if self.__keyStatus == self.__PressStatus:
                 self.__keyStatus = 1
                 if not self.__long_press_flag:
-                    # 马达震动
+                    # Motor vibration
                     EventMesh.publish("montor_on")
                     self.__callback(self.__gpio_num)
                     pass
@@ -76,7 +76,7 @@ class KeyProcess5(object):
 
         if (self.__preCount > self.DEBOUNCE_MAXCOUNT):
             # print("p:", self.__gpio_num)
-            # 往msg thread 发送消息
+            # Send a message to msg thread
             self.__keyStatus = self.__PressStatus
             self.__longTimer.start(self.__longTimeout, 0, self.__LongHandle)
             self.__goBack()
@@ -85,14 +85,14 @@ class keypadCallback(object):
 
     @staticmethod
     def pwk_event_handler(event):
-        """power key 回调"""
+        """power key callback"""
         if event == 1:
             EventMesh.publish("pwk_press_handle")
         elif event == 0:
             EventMesh.publish("pwk_up_handle")
 
 class KeypadManager(Abstract):
-    """物理按键加pwk"""
+    """Physical buttons with pwk"""
 
     def __init__(self, tp_cst816):
         self.tp_cst816 = tp_cst816
@@ -119,18 +119,18 @@ class KeypadManager(Abstract):
         EventMesh.subscribe("pwk_up_handle", self.__hand_up_up_handle)
         EventMesh.subscribe("get_hand_up_long_timer_flag", self.get_hand_up_long_timer_flag)
         EventMesh.subscribe("set_hand_up_long_timer_flag", self.set_hand_up_long_timer_flag)
-        # TP 触摸回调注册
+        # TP touch callback registration
         self.tp_cst816.set_callback(self.ui_callback)
-        # PWK 回调注册
+        # PWK callback registration
         self.__pk.powerKeyEventRegister(keypadCallback.pwk_event_handler)
-        # GPIO按键中断注册
+        # GPIO key interrupt registration
         self.__key_1_ext = KeyProcess5("key_1", ExtInt.GPIO21, self.__key1_up_handle, None)
         self.__key_2_ext = KeyProcess5("key_2", ExtInt.GPIO22, self.__key2_up_handle, None)
         self.__key_3_ext = KeyProcess5("key_3", ExtInt.GPIO20, self.__key3_up_handle, None)
         self.__key_sos_ext = KeyProcess5("key_sos", ExtInt.GPIO19, self.__sos_up_handle, None)
 
     def keypad_tone(self, topic=None, data=None):
-        # 按键音
+        # Button sound
         if not EventMesh.publish("get_keypad_tone") and EventMesh.publish("get_speaker_state") == 1:
             EventMesh.publish("audio_tone")
 
@@ -159,54 +159,54 @@ class KeypadManager(Abstract):
             print("error")
 
     def __key1_press_handle(self):
-        """key1键 按下"""
+        """key1 press"""
         pass
 
     def __key1_up_handle(self, topic=None, event=None):
-        """key1键 抬起"""
-        self.log.info("KEY 1 短按")
+        """key1 up"""
+        self.log.info("KEY 1 short press")
         EventMesh.publish("btn1_release")
 
     def __key2_press_handle(self, *args):
-        """key2键 按下"""
+        """key2 press"""
         pass
 
     def __key2_up_handle(self, *args):
-        """key2键 抬起"""
-        self.log.info("KEY 2 短按")
+        """key2 up"""
+        self.log.info("KEY 2 short press")
         EventMesh.publish("btn2_release")
 
     def __key3_press_handle(self):
-        """key3键 按下"""
+        """key3 press"""
         pass
 
     def __key3_up_handle(self, topic=None, event=None):
-        """key3键 抬起"""
-        self.log.info("KEY 3 短按")
+        """key3 up"""
+        self.log.info("KEY 3 short press")
         EventMesh.publish("btn3_release")
 
     def __sos_press_handle(self):
-        """sos键 按下"""
+        """sos press"""
         pass
 
     def __sos_up_handle(self, topic=None, event=None):
-        """sos键 抬起"""
-        self.log.info("SOS 短按")
+        """sos up"""
+        self.log.info("SOS short press")
         EventMesh.publish("btn_sos_release")
 
     def __hand_up_press_handle(self, topic=None, event=None):
-        """pwk 按下"""
-        # 马达震动
+        """pwk press"""
+        # Motor vibration
         EventMesh.publish("montor_on")
         self.__hand_up_long_timer_start()
 
     def __hand_up_up_handle(self, topic=None, event=None):
-        """pwk 抬起"""
+        """pwk up"""
         if self.__hand_up_long_timer_flag:
             self.__hand_up_long_timer_flag = False
             return
         self.__hand_up_long_timer_stop()
-        self.log.info("PWK 短按")
+        self.log.info("PWK short press")
         EventMesh.publish("btn_pwk_click")
 
     def __hand_up_long_timer_start(self):
@@ -216,9 +216,9 @@ class KeypadManager(Abstract):
         self.__hand_up_long_timer.stop()
 
     def __hand_up_long_handle(self, args):
-        """hand_up键 长按"""
+        """hand_up long press"""
         self.set_hand_up_long_timer_flag(flag=True)
-        self.log.info("PWK 长按3s")
+        self.log.info("PWK long press 3s")
         EventMesh.publish("btn_pwk_long_click")
 
     def get_hand_up_long_timer_flag(self, topic=None, data=None):

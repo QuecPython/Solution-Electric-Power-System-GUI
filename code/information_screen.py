@@ -51,10 +51,10 @@ class InformationScreen(BaseScreen):
         info_menu.add_style(STYLE_SCREEN.style_bg_white_border, lv.PART.MAIN | lv.STATE.DEFAULT)
         self.info_menu = info_menu
 
-        self.info_menu_item_create("逆变器", checked=True)
-        self.info_menu_item_create("电池")
-        self.info_menu_item_create("电网")
-        self.info_menu_item_create("负载")
+        self.info_menu_item_create("Inverter", checked=True)
+        self.info_menu_item_create("Battery")
+        self.info_menu_item_create("Power grid")
+        self.info_menu_item_create("Load")
 
         electric_module = lv.obj(self.screen)
         electric_module.set_pos(0, 140)
@@ -70,11 +70,11 @@ class InformationScreen(BaseScreen):
 
         total_electric_label = lv.label(electric_module)
         total_electric_label.set_pos(40, 18)
-        total_electric_label.set_size(200, 20)
-        total_electric_label.set_text("累计发电量")
+        total_electric_label.set_size(300, 20)
+        total_electric_label.set_text("Accumulated power generation")
         total_electric_label.set_long_mode(lv.label.LONG.WRAP)
         total_electric_label.set_style_text_align(lv.TEXT_ALIGN.LEFT, 0)
-        total_electric_label.add_style(STYLE_SCREEN.style_siyuan_18_black, lv.PART.MAIN | lv.STATE.DEFAULT)
+        total_electric_label.add_style(STYLE_SCREEN.style_montserrat_14_black, lv.PART.MAIN | lv.STATE.DEFAULT)
 
         total_electric_value = lv.label(electric_module)
         total_electric_value.set_pos(430, 18)
@@ -82,7 +82,7 @@ class InformationScreen(BaseScreen):
         total_electric_value.set_text("--")
         total_electric_value.set_long_mode(lv.label.LONG.WRAP)
         total_electric_value.set_style_text_align(lv.TEXT_ALIGN.RIGHT, 0)
-        total_electric_value.add_style(STYLE_SCREEN.style_siyuan_18_black, lv.PART.MAIN | lv.STATE.DEFAULT)
+        total_electric_value.add_style(STYLE_SCREEN.style_montserrat_14_black, lv.PART.MAIN | lv.STATE.DEFAULT)
 
         line_1_points = [
             {"x": 10, "y": 50},
@@ -98,15 +98,15 @@ class InformationScreen(BaseScreen):
         today_electric.set_text("--")
         today_electric.set_long_mode(lv.label.LONG.WRAP)
         today_electric.set_style_text_align(lv.TEXT_ALIGN.CENTER, 0)
-        today_electric.add_style(STYLE_SCREEN.style_siyuan_18_black, lv.PART.MAIN | lv.STATE.DEFAULT)
+        today_electric.add_style(STYLE_SCREEN.style_montserrat_14_black, lv.PART.MAIN | lv.STATE.DEFAULT)
 
         today_electric_tip = lv.label(electric_module)
         today_electric_tip.set_pos(10, 85)
-        today_electric_tip.set_size(140, 20)
-        today_electric_tip.set_text("当日发电")
+        today_electric_tip.set_size(140, 40)
+        today_electric_tip.set_text("Today")
         today_electric_tip.set_long_mode(lv.label.LONG.WRAP)
         today_electric_tip.set_style_text_align(lv.TEXT_ALIGN.CENTER, 0)
-        today_electric_tip.add_style(STYLE_SCREEN.style_siyuan_18_grey, lv.PART.MAIN | lv.STATE.DEFAULT)
+        today_electric_tip.add_style(STYLE_SCREEN.style_montserrat_14_grey, lv.PART.MAIN | lv.STATE.DEFAULT)
 
         cur_month_electric = lv.label(electric_module)
         cur_month_electric.set_pos(170, 65)
@@ -114,15 +114,15 @@ class InformationScreen(BaseScreen):
         cur_month_electric.set_text("--")
         cur_month_electric.set_long_mode(lv.label.LONG.WRAP)
         cur_month_electric.set_style_text_align(lv.TEXT_ALIGN.CENTER, 0)
-        cur_month_electric.add_style(STYLE_SCREEN.style_siyuan_18_black, lv.PART.MAIN | lv.STATE.DEFAULT)
+        cur_month_electric.add_style(STYLE_SCREEN.style_montserrat_14_black, lv.PART.MAIN | lv.STATE.DEFAULT)
 
         cur_month_electric_tip = lv.label(electric_module)
         cur_month_electric_tip.set_pos(170, 85)
-        cur_month_electric_tip.set_size(140, 20)
-        cur_month_electric_tip.set_text("当月发电")
+        cur_month_electric_tip.set_size(140, 40)
+        cur_month_electric_tip.set_text("This month")
         cur_month_electric_tip.set_long_mode(lv.label.LONG.WRAP)
         cur_month_electric_tip.set_style_text_align(lv.TEXT_ALIGN.CENTER, 0)
-        cur_month_electric_tip.add_style(STYLE_SCREEN.style_siyuan_18_grey, lv.PART.MAIN | lv.STATE.DEFAULT)
+        cur_month_electric_tip.add_style(STYLE_SCREEN.style_montserrat_14_grey, lv.PART.MAIN | lv.STATE.DEFAULT)
 
         cur_year_electric = lv.label(electric_module)
         cur_year_electric.set_pos(330, 65)
@@ -130,15 +130,15 @@ class InformationScreen(BaseScreen):
         cur_year_electric.set_text("--")
         cur_year_electric.set_long_mode(lv.label.LONG.WRAP)
         cur_year_electric.set_style_text_align(lv.TEXT_ALIGN.CENTER, 0)
-        cur_year_electric.add_style(STYLE_SCREEN.style_siyuan_18_black, lv.PART.MAIN | lv.STATE.DEFAULT)
+        cur_year_electric.add_style(STYLE_SCREEN.style_montserrat_14_black, lv.PART.MAIN | lv.STATE.DEFAULT)
 
         cur_year_electric_tip = lv.label(electric_module)
         cur_year_electric_tip.set_pos(330, 85)
-        cur_year_electric_tip.set_size(140, 20)
-        cur_year_electric_tip.set_text("当年发电")
+        cur_year_electric_tip.set_size(140, 40)
+        cur_year_electric_tip.set_text("This year")
         cur_year_electric_tip.set_long_mode(lv.label.LONG.WRAP)
         cur_year_electric_tip.set_style_text_align(lv.TEXT_ALIGN.CENTER, 0)
-        cur_year_electric_tip.add_style(STYLE_SCREEN.style_siyuan_18_grey, lv.PART.MAIN | lv.STATE.DEFAULT)
+        cur_year_electric_tip.add_style(STYLE_SCREEN.style_montserrat_14_grey, lv.PART.MAIN | lv.STATE.DEFAULT)
 
         yesterday_electric = lv.label(electric_module)
         yesterday_electric.set_pos(10, 120)
@@ -146,15 +146,15 @@ class InformationScreen(BaseScreen):
         yesterday_electric.set_text("--")
         yesterday_electric.set_long_mode(lv.label.LONG.WRAP)
         yesterday_electric.set_style_text_align(lv.TEXT_ALIGN.CENTER, 0)
-        yesterday_electric.add_style(STYLE_SCREEN.style_siyuan_18_black, lv.PART.MAIN | lv.STATE.DEFAULT)
+        yesterday_electric.add_style(STYLE_SCREEN.style_montserrat_14_black, lv.PART.MAIN | lv.STATE.DEFAULT)
 
         yesterday_electric_tip = lv.label(electric_module)
         yesterday_electric_tip.set_pos(10, 140)
-        yesterday_electric_tip.set_size(140, 20)
-        yesterday_electric_tip.set_text("昨日发电")
+        yesterday_electric_tip.set_size(140, 40)
+        yesterday_electric_tip.set_text("Yesterday")
         yesterday_electric_tip.set_long_mode(lv.label.LONG.WRAP)
         yesterday_electric_tip.set_style_text_align(lv.TEXT_ALIGN.CENTER, 0)
-        yesterday_electric_tip.add_style(STYLE_SCREEN.style_siyuan_18_grey, lv.PART.MAIN | lv.STATE.DEFAULT)
+        yesterday_electric_tip.add_style(STYLE_SCREEN.style_montserrat_14_grey, lv.PART.MAIN | lv.STATE.DEFAULT)
 
         last_month_electric = lv.label(electric_module)
         last_month_electric.set_pos(170, 120)
@@ -162,15 +162,15 @@ class InformationScreen(BaseScreen):
         last_month_electric.set_text("--")
         last_month_electric.set_long_mode(lv.label.LONG.WRAP)
         last_month_electric.set_style_text_align(lv.TEXT_ALIGN.CENTER, 0)
-        last_month_electric.add_style(STYLE_SCREEN.style_siyuan_18_black, lv.PART.MAIN | lv.STATE.DEFAULT)
+        last_month_electric.add_style(STYLE_SCREEN.style_montserrat_14_black, lv.PART.MAIN | lv.STATE.DEFAULT)
 
         last_month_electric_tip = lv.label(electric_module)
         last_month_electric_tip.set_pos(170, 140)
-        last_month_electric_tip.set_size(140, 20)
-        last_month_electric_tip.set_text("上月发电")
+        last_month_electric_tip.set_size(140, 40)
+        last_month_electric_tip.set_text("Last month")
         last_month_electric_tip.set_long_mode(lv.label.LONG.WRAP)
         last_month_electric_tip.set_style_text_align(lv.TEXT_ALIGN.CENTER, 0)
-        last_month_electric_tip.add_style(STYLE_SCREEN.style_siyuan_18_grey, lv.PART.MAIN | lv.STATE.DEFAULT)
+        last_month_electric_tip.add_style(STYLE_SCREEN.style_montserrat_14_grey, lv.PART.MAIN | lv.STATE.DEFAULT)
 
         last_year_electric = lv.label(electric_module)
         last_year_electric.set_pos(330, 120)
@@ -178,15 +178,15 @@ class InformationScreen(BaseScreen):
         last_year_electric.set_text("--")
         last_year_electric.set_long_mode(lv.label.LONG.WRAP)
         last_year_electric.set_style_text_align(lv.TEXT_ALIGN.CENTER, 0)
-        last_year_electric.add_style(STYLE_SCREEN.style_siyuan_18_black, lv.PART.MAIN | lv.STATE.DEFAULT)
+        last_year_electric.add_style(STYLE_SCREEN.style_montserrat_14_black, lv.PART.MAIN | lv.STATE.DEFAULT)
 
         last_year_electric_tip = lv.label(electric_module)
         last_year_electric_tip.set_pos(330, 140)
-        last_year_electric_tip.set_size(140, 20)
-        last_year_electric_tip.set_text("去年发电")
+        last_year_electric_tip.set_size(140, 40)
+        last_year_electric_tip.set_text("Last year")
         last_year_electric_tip.set_long_mode(lv.label.LONG.WRAP)
         last_year_electric_tip.set_style_text_align(lv.TEXT_ALIGN.CENTER, 0)
-        last_year_electric_tip.add_style(STYLE_SCREEN.style_siyuan_18_grey, lv.PART.MAIN | lv.STATE.DEFAULT)
+        last_year_electric_tip.add_style(STYLE_SCREEN.style_montserrat_14_grey, lv.PART.MAIN | lv.STATE.DEFAULT)
 
         line_2_points = [
             {"x": 160, "y": 65},
@@ -205,15 +205,15 @@ class InformationScreen(BaseScreen):
         line_3.add_style(STYLE_SCREEN.style_line, lv.PART.MAIN | lv.STATE.DEFAULT)
 
         search_hist_tip = lv.label(electric_module)
-        search_hist_tip.set_pos(170, 200)
-        search_hist_tip.set_size(120, 20)
-        search_hist_tip.set_text("查看历史电量")
+        search_hist_tip.set_pos(100, 200)
+        search_hist_tip.set_size(240, 20)
+        search_hist_tip.set_text("View historical battery levels")
         search_hist_tip.set_long_mode(lv.label.LONG.WRAP)
         search_hist_tip.set_style_text_align(lv.TEXT_ALIGN.CENTER, 0)
-        search_hist_tip.add_style(STYLE_SCREEN.style_siyuan_18_grey, lv.PART.MAIN | lv.STATE.DEFAULT)
+        search_hist_tip.add_style(STYLE_SCREEN.style_montserrat_14_grey, lv.PART.MAIN | lv.STATE.DEFAULT)
 
         search_hist_img = lv.img(electric_module)
-        search_hist_img.set_pos(290, 202)
+        search_hist_img.set_pos(340, 200)
         search_hist_img.set_size(16, 16)
         search_hist_img.set_src(MEDIA_DIR + "detail_right.png")
         search_hist_img.add_style(STYLE_SCREEN.style_img, lv.PART.MAIN | lv.STATE.DEFAULT)
@@ -233,10 +233,10 @@ class InformationScreen(BaseScreen):
         total_pv_power_label = lv.label(pv_input_power_module)
         total_pv_power_label.set_pos(40, 18)
         total_pv_power_label.set_size(200, 20)
-        total_pv_power_label.set_text("总PV输入功率")
+        total_pv_power_label.set_text("Total PV input power")
         total_pv_power_label.set_long_mode(lv.label.LONG.WRAP)
         total_pv_power_label.set_style_text_align(lv.TEXT_ALIGN.LEFT, 0)
-        total_pv_power_label.add_style(STYLE_SCREEN.style_siyuan_18_black, lv.PART.MAIN | lv.STATE.DEFAULT)
+        total_pv_power_label.add_style(STYLE_SCREEN.style_montserrat_14_black, lv.PART.MAIN | lv.STATE.DEFAULT)
 
         total_pv_power_value = lv.label(pv_input_power_module)
         total_pv_power_value.set_pos(430, 18)
@@ -244,7 +244,7 @@ class InformationScreen(BaseScreen):
         total_pv_power_value.set_text("--")
         total_pv_power_value.set_long_mode(lv.label.LONG.WRAP)
         total_pv_power_value.set_style_text_align(lv.TEXT_ALIGN.RIGHT, 0)
-        total_pv_power_value.add_style(STYLE_SCREEN.style_siyuan_18_black, lv.PART.MAIN | lv.STATE.DEFAULT)
+        total_pv_power_value.add_style(STYLE_SCREEN.style_montserrat_14_black, lv.PART.MAIN | lv.STATE.DEFAULT)
 
         line_4_points = [
             {"x": 10, "y": 50},
@@ -260,15 +260,15 @@ class InformationScreen(BaseScreen):
         pv1_tip.set_text("PV1")
         pv1_tip.set_long_mode(lv.label.LONG.WRAP)
         pv1_tip.set_style_text_align(lv.TEXT_ALIGN.LEFT, 0)
-        pv1_tip.add_style(STYLE_SCREEN.style_siyuan_18_grey, lv.PART.MAIN | lv.STATE.DEFAULT)
+        pv1_tip.add_style(STYLE_SCREEN.style_montserrat_14_grey, lv.PART.MAIN | lv.STATE.DEFAULT)
 
         pv1_vbat_tip = lv.label(pv_input_power_module)
         pv1_vbat_tip.set_pos(200, 60)
-        pv1_vbat_tip.set_size(40, 20)
-        pv1_vbat_tip.set_text("电压")
+        pv1_vbat_tip.set_size(80, 20)
+        pv1_vbat_tip.set_text("Voltage")
         pv1_vbat_tip.set_long_mode(lv.label.LONG.WRAP)
         pv1_vbat_tip.set_style_text_align(lv.TEXT_ALIGN.CENTER, 0)
-        pv1_vbat_tip.add_style(STYLE_SCREEN.style_siyuan_18_grey, lv.PART.MAIN | lv.STATE.DEFAULT)
+        pv1_vbat_tip.add_style(STYLE_SCREEN.style_montserrat_14_grey, lv.PART.MAIN | lv.STATE.DEFAULT)
 
         pv1_vbat = lv.label(pv_input_power_module)
         pv1_vbat.set_pos(200, 90)
@@ -276,15 +276,15 @@ class InformationScreen(BaseScreen):
         pv1_vbat.set_text("--")
         pv1_vbat.set_long_mode(lv.label.LONG.WRAP)
         pv1_vbat.set_style_text_align(lv.TEXT_ALIGN.CENTER, 0)
-        pv1_vbat.add_style(STYLE_SCREEN.style_siyuan_18_grey, lv.PART.MAIN | lv.STATE.DEFAULT)
+        pv1_vbat.add_style(STYLE_SCREEN.style_montserrat_14_grey, lv.PART.MAIN | lv.STATE.DEFAULT)
 
         pv1_electric_tip = lv.label(pv_input_power_module)
         pv1_electric_tip.set_pos(300, 60)
-        pv1_electric_tip.set_size(40, 20)
-        pv1_electric_tip.set_text("电流")
+        pv1_electric_tip.set_size(80, 20)
+        pv1_electric_tip.set_text("Current")
         pv1_electric_tip.set_long_mode(lv.label.LONG.WRAP)
         pv1_electric_tip.set_style_text_align(lv.TEXT_ALIGN.CENTER, 0)
-        pv1_electric_tip.add_style(STYLE_SCREEN.style_siyuan_18_grey, lv.PART.MAIN | lv.STATE.DEFAULT)
+        pv1_electric_tip.add_style(STYLE_SCREEN.style_montserrat_14_grey, lv.PART.MAIN | lv.STATE.DEFAULT)
 
         pv1_electric = lv.label(pv_input_power_module)
         pv1_electric.set_pos(300, 90)
@@ -292,15 +292,15 @@ class InformationScreen(BaseScreen):
         pv1_electric.set_text("--")
         pv1_electric.set_long_mode(lv.label.LONG.WRAP)
         pv1_electric.set_style_text_align(lv.TEXT_ALIGN.CENTER, 0)
-        pv1_electric.add_style(STYLE_SCREEN.style_siyuan_18_grey, lv.PART.MAIN | lv.STATE.DEFAULT)
+        pv1_electric.add_style(STYLE_SCREEN.style_montserrat_14_grey, lv.PART.MAIN | lv.STATE.DEFAULT)
 
         pv1_power_tip = lv.label(pv_input_power_module)
         pv1_power_tip.set_pos(400, 60)
-        pv1_power_tip.set_size(40, 20)
-        pv1_power_tip.set_text("功率")
+        pv1_power_tip.set_size(80, 20)
+        pv1_power_tip.set_text("Power")
         pv1_power_tip.set_long_mode(lv.label.LONG.WRAP)
         pv1_power_tip.set_style_text_align(lv.TEXT_ALIGN.CENTER, 0)
-        pv1_power_tip.add_style(STYLE_SCREEN.style_siyuan_18_grey, lv.PART.MAIN | lv.STATE.DEFAULT)
+        pv1_power_tip.add_style(STYLE_SCREEN.style_montserrat_14_grey, lv.PART.MAIN | lv.STATE.DEFAULT)
 
         pv1_power = lv.label(pv_input_power_module)
         pv1_power.set_pos(400, 90)
@@ -308,7 +308,7 @@ class InformationScreen(BaseScreen):
         pv1_power.set_text("--")
         pv1_power.set_long_mode(lv.label.LONG.WRAP)
         pv1_power.set_style_text_align(lv.TEXT_ALIGN.CENTER, 0)
-        pv1_power.add_style(STYLE_SCREEN.style_siyuan_18_grey, lv.PART.MAIN | lv.STATE.DEFAULT)
+        pv1_power.add_style(STYLE_SCREEN.style_montserrat_14_grey, lv.PART.MAIN | lv.STATE.DEFAULT)
 
         line_view_module = lv.obj(self.screen)
         line_view_module.set_pos(0, 510)
@@ -316,13 +316,13 @@ class InformationScreen(BaseScreen):
         line_view_module.add_style(STYLE_SCREEN.style_bg_white_border, lv.PART.MAIN | lv.STATE.DEFAULT)
         self.line_view_module = line_view_module
 
-        self.view_modele_item_create("总逆变输出变量", "--")
-        self.view_modele_item_create("逆变器SN", "--")
-        self.view_modele_item_create("逆变器时间", "--")
-        self.view_modele_item_create("逆变器额定功率", "--")
-        self.view_modele_item_create("Model号", "--")
-        self.view_modele_item_create("DSP软件版本", "--")
-        self.view_modele_item_create("液晶软件版本", "--")
+        self.view_modele_item_create("Total inverter output variable", "--")
+        self.view_modele_item_create("Inverter SN", "--")
+        self.view_modele_item_create("Inverter time", "--")
+        self.view_modele_item_create("Rated power of inverter", "--")
+        self.view_modele_item_create("Model number", "--")
+        self.view_modele_item_create("DSP software version", "--")
+        self.view_modele_item_create("LCD software version", "--")
 
     def info_menu_item_create(self, name, checked=False):
         menu_btn = lv.obj(self.info_menu)
@@ -337,7 +337,7 @@ class InformationScreen(BaseScreen):
         menu_btn_text.set_long_mode(lv.label.LONG.WRAP)
         menu_btn_text.set_style_text_align(lv.TEXT_ALIGN.CENTER, 0)
         menu_btn_text.add_style(
-            (STYLE_SCREEN.style_siyuan_18_orange_btn if checked else STYLE_SCREEN.style_siyuan_18_grey), lv.PART.MAIN | lv.STATE.DEFAULT
+            (STYLE_SCREEN.style_montserrat_14_orange_btn if checked else STYLE_SCREEN.style_montserrat_14_grey), lv.PART.MAIN | lv.STATE.DEFAULT
         )
 
         num = len(self.menus)
@@ -352,11 +352,11 @@ class InformationScreen(BaseScreen):
 
         view_module_tip = lv.label(view_module)
         view_module_tip.set_pos(20, 13)
-        view_module_tip.set_size(200, 20)
+        view_module_tip.set_size(300, 20)
         view_module_tip.set_text(name)
         view_module_tip.set_long_mode(lv.label.LONG.WRAP)
         view_module_tip.set_style_text_align(lv.TEXT_ALIGN.LEFT, 0)
-        view_module_tip.add_style(STYLE_SCREEN.style_siyuan_18_black, lv.PART.MAIN | lv.STATE.DEFAULT)
+        view_module_tip.add_style(STYLE_SCREEN.style_montserrat_14_black, lv.PART.MAIN | lv.STATE.DEFAULT)
 
         view_module_val = lv.label(view_module)
         view_module_val.set_pos(430, 18)
@@ -364,13 +364,13 @@ class InformationScreen(BaseScreen):
         view_module_val.set_text(value)
         view_module_val.set_long_mode(lv.label.LONG.WRAP)
         view_module_val.set_style_text_align(lv.TEXT_ALIGN.RIGHT, 0)
-        view_module_val.add_style(STYLE_SCREEN.style_siyuan_18_black, lv.PART.MAIN | lv.STATE.DEFAULT)
+        view_module_val.add_style(STYLE_SCREEN.style_montserrat_14_black, lv.PART.MAIN | lv.STATE.DEFAULT)
 
         self.view_modules.append((view_module, view_module_tip, view_module_val))
 
     def info_menu_change_event_cb(self, e, index):
-        self.menus[self.current_menu][1].remove_style(STYLE_SCREEN.style_siyuan_18_orange_btn, lv.PART.MAIN | lv.STATE.DEFAULT)
-        self.menus[self.current_menu][1].add_style(STYLE_SCREEN.style_siyuan_18_grey, lv.PART.MAIN | lv.STATE.DEFAULT)
-        self.menus[index][1].remove_style(STYLE_SCREEN.style_siyuan_18_grey, lv.PART.MAIN | lv.STATE.DEFAULT)
-        self.menus[index][1].add_style(STYLE_SCREEN.style_siyuan_18_orange_btn, lv.PART.MAIN | lv.STATE.DEFAULT)
+        self.menus[self.current_menu][1].remove_style(STYLE_SCREEN.style_montserrat_14_orange_btn, lv.PART.MAIN | lv.STATE.DEFAULT)
+        self.menus[self.current_menu][1].add_style(STYLE_SCREEN.style_montserrat_14_grey, lv.PART.MAIN | lv.STATE.DEFAULT)
+        self.menus[index][1].remove_style(STYLE_SCREEN.style_montserrat_14_grey, lv.PART.MAIN | lv.STATE.DEFAULT)
+        self.menus[index][1].add_style(STYLE_SCREEN.style_montserrat_14_orange_btn, lv.PART.MAIN | lv.STATE.DEFAULT)
         self.current_menu = index

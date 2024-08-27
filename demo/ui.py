@@ -25,7 +25,7 @@ style_img = lv.style_t()
 style_img.init()
 style_img.set_img_opa(255)
 
-# 白色16字体
+# White 16 font
 style_font_white_montserrat_16 = lv.style_t()
 style_font_white_montserrat_16.init()
 style_font_white_montserrat_16.set_radius(0)
@@ -40,7 +40,7 @@ style_font_white_montserrat_16.set_pad_left(0)
 style_font_white_montserrat_16.set_pad_right(0)
 style_font_white_montserrat_16.set_pad_top(0)
 style_font_white_montserrat_16.set_pad_bottom(0)
-# 灰色16字体
+# Gray 16 font
 style_font_gray_montserrat_16 = lv.style_t()
 style_font_gray_montserrat_16.init()
 style_font_gray_montserrat_16.set_radius(0)
@@ -55,7 +55,7 @@ style_font_gray_montserrat_16.set_pad_left(0)
 style_font_gray_montserrat_16.set_pad_right(0)
 style_font_gray_montserrat_16.set_pad_top(0)
 style_font_gray_montserrat_16.set_pad_bottom(0)
-# 白色18字体
+# White 18 font
 style_font_white_montserrat_18 = lv.style_t()
 style_font_white_montserrat_18.init()
 style_font_white_montserrat_18.set_radius(0)
@@ -70,7 +70,7 @@ style_font_white_montserrat_18.set_pad_left(0)
 style_font_white_montserrat_18.set_pad_right(0)
 style_font_white_montserrat_18.set_pad_top(0)
 style_font_white_montserrat_18.set_pad_bottom(0)
-# 白色24字体
+# White 24 font
 style_font_white_montserrat_24 = lv.style_t()
 style_font_white_montserrat_24.init()
 style_font_white_montserrat_24.set_radius(0)
@@ -85,7 +85,7 @@ style_font_white_montserrat_24.set_pad_left(0)
 style_font_white_montserrat_24.set_pad_right(0)
 style_font_white_montserrat_24.set_pad_top(0)
 style_font_white_montserrat_24.set_pad_bottom(0)
-# 白色48字体
+# White 48 font
 style_font_white_montserrat_48 = lv.style_t()
 style_font_white_montserrat_48.init()
 style_font_white_montserrat_48.set_radius(0)
@@ -100,7 +100,7 @@ style_font_white_montserrat_48.set_pad_left(0)
 style_font_white_montserrat_48.set_pad_right(0)
 style_font_white_montserrat_48.set_pad_top(0)
 style_font_white_montserrat_48.set_pad_bottom(0)
-# 白色58字体
+# White 58 font
 style_font_white_montserrat_58 = lv.style_t()
 style_font_white_montserrat_58.init()
 style_font_white_montserrat_58.set_radius(0)
@@ -115,7 +115,7 @@ style_font_white_montserrat_58.set_pad_left(0)
 style_font_white_montserrat_58.set_pad_right(0)
 style_font_white_montserrat_58.set_pad_top(0)
 style_font_white_montserrat_58.set_pad_bottom(0)
-# 黑色容器背景
+# Black container background
 style_cont_white = lv.style_t()
 style_cont_white.init()
 style_cont_white.set_radius(0)
@@ -137,7 +137,7 @@ style_list_scrollbar.set_bg_color(lv.color_make(0xff, 0xff, 0xff))
 style_list_scrollbar.set_bg_grad_color(lv.color_make(0xff, 0xff, 0xff))
 style_list_scrollbar.set_bg_grad_dir(lv.GRAD_DIR.VER)
 style_list_scrollbar.set_bg_opa(0)
-# 群组列表样式 黑色
+# Group List Style Black
 style_btn = lv.style_t()
 style_btn.init()
 style_btn.set_bg_opa(0)
@@ -146,7 +146,7 @@ style_btn.set_border_width(0)
 style_btn.set_anim_speed(5)
 style_btn.set_text_color(lv.color_make(0xff, 0xff, 0xff))
 style_btn.set_text_font_v2("lv_font_18.bin", 24, 0)
-# 开机
+# Power on
 power_on_img_screen = lv.obj()
 power_on_img_screen.add_style(style_default, lv.PART.MAIN | lv.STATE.DEFAULT)
 power_on_img_screen_bg = lv.img(power_on_img_screen)
@@ -158,7 +158,7 @@ power_on_img_screen_bg.set_angle(0)
 power_on_img_screen_bg.add_style(style_bg, lv.PART.MAIN | lv.STATE.DEFAULT)
 lv.scr_load(power_on_img_screen)
 lv.task_handler()
-# 关机
+# Shut down
 power_off_img_screen = lv.obj()
 power_off_img_screen.add_style(style_default, lv.PART.MAIN | lv.STATE.DEFAULT)
 power_off_img_screen_bg = lv.img(power_off_img_screen)
@@ -168,7 +168,7 @@ power_off_img_screen_bg.set_src("E:/static/power_off.png")
 power_off_img_screen_bg.set_pivot(0, 0)
 power_off_img_screen_bg.set_angle(0)
 power_off_img_screen_bg.add_style(style_bg, lv.PART.MAIN | lv.STATE.DEFAULT)
-# 主页面
+# Main page
 main = lv.obj()
 main.add_style(style_default, lv.PART.MAIN | lv.STATE.DEFAULT)
 main_bg = lv.img(main)
@@ -178,19 +178,19 @@ main_bg.set_src("E:/static/bg.png")
 main_bg.set_pivot(0, 0)
 main_bg.set_angle(0)
 main_bg.add_style(style_bg, lv.PART.MAIN | lv.STATE.DEFAULT)
-# 信号强度
+# signal intensity 
 main_sign = lv.img(main)
 main_sign.set_pos(10, 10)
 main_sign.set_size(25, 22)
 main_sign.set_src("E:/static/icon_signal_3.png")
 main_sign.add_style(style_bg, lv.PART.MAIN | lv.STATE.DEFAULT)
-# 电量
+# Electricity level
 main_bat = lv.img(main)
 main_bat.set_pos(192, 10)
 main_bat.set_size(35, 22)
 main_bat.set_src("E:/static/icon_battery_4.png")
 main_bat.add_style(style_bg, lv.PART.MAIN | lv.STATE.DEFAULT)
-# 时间
+# time
 main_time = lv.label(main)
 main_time.set_pos(0, 35)
 main_time.set_size(240, 48)
@@ -199,7 +199,7 @@ main_time.set_text("")
 main_time.set_long_mode(lv.label.LONG.WRAP)
 main_time.set_style_text_align(lv.TEXT_ALIGN.CENTER, 0)
 main_time.add_style(style_font_white_montserrat_48, lv.PART.MAIN | lv.STATE.DEFAULT)
-# 日期
+# date
 main_date = lv.label(main)
 main_date.set_pos(0, 120)
 main_date.set_size(240, 24)
@@ -208,16 +208,16 @@ main_date.set_text("")
 main_date.set_long_mode(lv.label.LONG.WRAP)
 main_date.set_style_text_align(lv.TEXT_ALIGN.CENTER, 0)
 main_date.add_style(style_font_white_montserrat_18, lv.PART.MAIN | lv.STATE.DEFAULT)
-# 星期
+# week
 main_week = lv.label(main)
 main_week.set_pos(0, 150)
 main_week.set_size(240, 24)
 main_week.set_text("")
-# main_week.set_text("星期二")
+# main_week.set_text("Tuesday")
 main_week.set_long_mode(lv.label.LONG.WRAP)
 main_week.set_style_text_align(lv.TEXT_ALIGN.CENTER, 0)
 main_week.add_style(style_font_white_montserrat_18, lv.PART.MAIN | lv.STATE.DEFAULT)
-# 步数
+# Step count
 main_step_img = lv.img(main)
 main_step_img.set_pos(80, 185)
 main_step_img.set_size(26, 26)
@@ -231,7 +231,7 @@ main_step_label.set_long_mode(lv.label.LONG.WRAP)
 main_step_label.set_style_text_align(lv.TEXT_ALIGN.LEFT, 0)
 main_step_label.add_style(style_font_white_montserrat_18, lv.PART.MAIN | lv.STATE.DEFAULT)
 ####################################################menu screen ######################################################
-# 菜单-第一个显示电话本
+# Menu - First Display Phone Book
 menu = lv.obj()
 menu.add_style(style_default, lv.PART.MAIN | lv.STATE.DEFAULT)
 menu_bg = lv.img(menu)
@@ -242,7 +242,7 @@ menu_bg.set_src("E:/static/bg.png")
 menu_bg.set_pivot(0, 0)
 menu_bg.set_angle(0)
 menu_bg.add_style(style_bg, lv.PART.MAIN | lv.STATE.DEFAULT)
-# 菜单图片
+# Menu image
 menu_img = lv.img(menu)
 menu_img.set_pos(0, 0)
 menu_img.set_size(240, 240)
@@ -265,7 +265,7 @@ setting_screen_bg.add_style(style_bg, lv.PART.MAIN | lv.STATE.DEFAULT)
 setting_screen_title = lv.label(setting_screen)
 setting_screen_title.set_pos(0, 5)
 setting_screen_title.set_size(240, 24)
-setting_screen_title.set_text("设置")
+setting_screen_title.set_text("set up")
 setting_screen_title.set_long_mode(lv.label.LONG.WRAP)
 setting_screen_title.set_style_text_align(lv.TEXT_ALIGN.CENTER, 0)
 setting_screen_title.add_style(style_font_gray_montserrat_16, lv.PART.MAIN | lv.STATE.DEFAULT)
@@ -279,7 +279,7 @@ setting_screen_list.add_style(style_btn, lv.PART.MAIN | lv.STATE.DEFAULT)
 setting_screen_list.add_style(style_list_scrollbar, lv.PART.SCROLLBAR | lv.STATE.DEFAULT)
 setting_screen_list.add_style(style_list_scrollbar, lv.PART.SCROLLBAR | lv.STATE.SCROLLED)
 ####################################################no info Tips screen ######################################################
-# 内容为空提示页面
+# The content is an empty prompt page
 no_content_hint = lv.obj()
 no_content_hint.add_style(style_default, lv.PART.MAIN | lv.STATE.DEFAULT)
 no_content_hint_bg = lv.img(no_content_hint)
@@ -290,7 +290,7 @@ no_content_hint_bg.set_src("E:/static/bg.png")
 no_content_hint_bg.set_pivot(0, 0)
 no_content_hint_bg.set_angle(0)
 no_content_hint_bg.add_style(style_bg, lv.PART.MAIN | lv.STATE.DEFAULT)
-# 标题
+# title
 no_content_hint_title_label = lv.label(no_content_hint)
 no_content_hint_title_label.set_pos(0, 5)
 no_content_hint_title_label.set_size(240, 26)
@@ -298,7 +298,7 @@ no_content_hint_title_label.set_text("")
 no_content_hint_title_label.set_long_mode(lv.label.LONG.WRAP)
 no_content_hint_title_label.set_style_text_align(lv.TEXT_ALIGN.CENTER, 0)
 no_content_hint_title_label.add_style(style_font_gray_montserrat_16, lv.PART.MAIN | lv.STATE.DEFAULT)
-# 提示信息
+# Reminder information
 no_content_hint_label = lv.label(no_content_hint)
 no_content_hint_label.set_pos(0, 80)
 no_content_hint_label.set_size(240, 160)
@@ -317,23 +317,23 @@ power_off_screen_bg.set_src("E:/static/bg.png")
 power_off_screen_bg.set_pivot(0, 0)
 power_off_screen_bg.set_angle(0)
 power_off_screen_bg.add_style(style_bg, lv.PART.MAIN | lv.STATE.DEFAULT)
-# 标题信息
+# Title information
 power_off_screen_title_label = lv.label(power_off_screen)
 power_off_screen_title_label.set_pos(0, 5)
 power_off_screen_title_label.set_size(240, 24)
-power_off_screen_title_label.set_text("关机")
+power_off_screen_title_label.set_text("Shut down")
 power_off_screen_title_label.set_long_mode(lv.label.LONG.WRAP)
 power_off_screen_title_label.set_style_text_align(lv.TEXT_ALIGN.CENTER, 0)
 power_off_screen_title_label.add_style(style_font_white_montserrat_16, lv.PART.MAIN | lv.STATE.DEFAULT)
-# 提示
+# Tips
 power_off_screen_hint_label = lv.label(power_off_screen)
 power_off_screen_hint_label.set_pos(0, 80)
 power_off_screen_hint_label.set_size(240, 160)
-power_off_screen_hint_label.set_text("确定关机?")
+power_off_screen_hint_label.set_text("Are you sure to shut down?")
 power_off_screen_hint_label.set_long_mode(lv.label.LONG.WRAP)
 power_off_screen_hint_label.set_style_text_align(lv.TEXT_ALIGN.CENTER, 0)
 power_off_screen_hint_label.add_style(style_font_white_montserrat_18, lv.PART.MAIN | lv.STATE.DEFAULT)
-# 确定图片按钮
+# Confirm Image Button
 power_off_screen_ok = lv.imgbtn(power_off_screen)
 power_off_screen_ok.set_pos(35, 135)
 power_off_screen_ok.set_size(70, 70)
@@ -345,7 +345,7 @@ power_off_screen_ok.add_flag(lv.obj.FLAG.CLICKABLE)
 power_off_screen_ok.add_style(style_img, lv.PART.MAIN | lv.STATE.DEFAULT)
 power_off_screen_ok.add_style(style_img, lv.PART.MAIN | lv.STATE.PRESSED)
 power_off_screen_ok.add_style(style_img, lv.PART.MAIN | lv.STATE.CHECKED)
-# 取消图片按钮
+# Cancel Image Button
 power_off_screen_not = lv.imgbtn(power_off_screen)
 power_off_screen_not.set_pos(135, 135)
 power_off_screen_not.set_size(70, 70)
@@ -368,21 +368,21 @@ about_screen_bg.set_src("E:/static/bg.png")
 about_screen_bg.set_pivot(0, 0)
 about_screen_bg.set_angle(0)
 about_screen_bg.add_style(style_bg, lv.PART.MAIN | lv.STATE.DEFAULT)
-# 标题
+# Title
 about_screen_title_label = lv.label(about_screen)
 about_screen_title_label.set_pos(0, 5)
 about_screen_title_label.set_size(240, 24)
-about_screen_title_label.set_text("智能学生证")
+about_screen_title_label.set_text("Smart Student ID")
 about_screen_title_label.set_long_mode(lv.label.LONG.WRAP)
 about_screen_title_label.set_style_text_align(lv.TEXT_ALIGN.CENTER, 0)
 about_screen_title_label.add_style(style_font_white_montserrat_18, lv.PART.MAIN | lv.STATE.DEFAULT)
-# 内容
+# Content
 about_screen_info_label = lv.label(about_screen)
 about_screen_info_label.set_pos(0, 30)
 about_screen_info_label.set_size(240, 210)
-# msg = """型号:KE27S 软件版本:
+# msg = """Model: KE27S software version:
 # KE27S_KR_1.0.1
-# 硬件版本:K16_V1.0
+# Hardware version:K16_V1.0
 # IMEI:865443041575958
 # Time:22:00:35 2023-8-8
 # """
@@ -391,7 +391,7 @@ about_screen_info_label.set_long_mode(lv.label.LONG.WRAP)
 about_screen_info_label.set_style_text_align(lv.TEXT_ALIGN.LEFT, 0)
 about_screen_info_label.add_style(style_font_white_montserrat_16, lv.PART.MAIN | lv.STATE.DEFAULT)
 ####################################################bind code screen ######################################################
-# 绑定码
+# Binding code
 binding_code_screen = lv.obj()
 binding_code_screen.add_style(style_default, lv.PART.MAIN | lv.STATE.DEFAULT)
 binding_code_screen_bg = lv.img(binding_code_screen)
@@ -414,27 +414,27 @@ class Screen(Abstract):
 
     @staticmethod
     def publish_ope():
-        # 主动向后端请求运营商资源
+        # Proactively request operator resources from the backend
         return EventMesh.publish("screen_get_ope")
 
     @staticmethod
     def publish_sig():
-        # 主动向后端请求信号强度
+        # Proactively request signal strength from the backend
         return EventMesh.publish("screen_get_sig")
 
     @staticmethod
     def publish_time():
-        # 主动向后端请求时间
+        # Proactively request time from the backend
         return EventMesh.publish("screen_get_time")
 
     @staticmethod
     def publish_date():
-        # 主动向后端请求时间
+        # Proactively request time from the backend
         return EventMesh.publish("main_get_date")
 
     @staticmethod
     def publish_battery():
-        # 主动向后端请求电池电量
+        # Proactively request battery level from the backend
         return EventMesh.publish("screen_get_battery")
 
     def deactivate(self):
@@ -560,19 +560,19 @@ class MainScreen(Screen):
     def __init__(self):
         super().__init__()
         self.meta = main
-        # 信号
+        # Signal
         self.main_sign = main_sign
-        # 电量
+        # Electricity level
         self.main_bat = main_bat
-        # 时间
+        # Time
         self.main_time = main_time
-        # 日期
+        # Date
         self.main_date = main_date
-        # 星期
+        # Week
         self.main_week = main_week
-        # 步数
+        # Step count
         self.main_step_label = main_step_label
-        # 开机动画
+        # Boot animation 
         # self.power_on_gif_img = power_on_gif_img
         self.display_charging = DisplayCharging()
         self.next_charging_idx = 0
@@ -594,15 +594,15 @@ class MainScreen(Screen):
         signal = self.publish_sig()
         if signal:
             self.__signal_cb(None, signal)
-        # 获取电池电量
+        # Obtain battery level
         battery = self.publish_battery()
         if battery:
             self.__battery_cb(None, battery)
-        # 获取时间
+        # Get time
         time = self.publish_time()
         if time:
             self.__time_cb(None, time)
-        # 关闭开机动画
+        # Turn off startup animation
         # self.power_on_gif_img.delete()
         self.display_charging.set_start_callback(self.charging_callback_start)
         self.display_charging.set_end_callback(self.charging_callback_end)
@@ -623,28 +623,28 @@ class MainScreen(Screen):
             self.__battery_cb(None, battery)
 
     def done_left_to_right(self):
-        # 左滑菜单
+        # Left swipe menu
         EventMesh.publish("load_screen", {"screen": "MenuScreen"})
 
     def __signal_cb(self, topic, sig):
-        # 更新信号
+        # Update signal
         if 0 < sig <= 31:
             self.main_sign.set_src('E:/static/icon_signal_' + str(int(sig * 4 / 31)) + '.png')
         else:
             self.main_sign.set_src('E:/static/icon_no_sim_card.png')
 
     def __battery_cb(self, topic, battery):
-        # 更新电量
+        # Update battery level
         if battery is None:
             return
         self.main_bat.set_src(battery)
 
     def __step_count(self, event, msg):
-        # 更新步数
+        # Update Steps
         self.main_step_value.set_text("0")
 
     def __time_cb(self, event, data):
-        # 更新时间日期星期
+        # Update Time Date Week
         date, time, week = data
         self.main_time.set_text(time)
         self.main_date.set_text(date)
@@ -719,25 +719,25 @@ class MenuScreen(Screen):
 
     def done_click(self):
         if self.cur == 0:
-            # 电话本
+            # Telephone book
             EventMesh.publish("load_screen", {"screen": "NoContentHintScreen", "meta": {"screen_info": "phone_book"}})
         elif self.cur == 1:
-            # 通话记录
+            # Call records
             EventMesh.publish("load_screen", {"screen": "NoContentHintScreen", "meta": {"screen_info": "call_log"}})
         elif self.cur == 4:
-            # 信息
+            # Information
             EventMesh.publish("load_screen", {"screen": "NoContentHintScreen", "meta": {"screen_info": "msg"}})
         elif self.cur == 5:
-            # 平台信息
+            # Platform Information
             EventMesh.publish("load_screen", {"screen": "NoContentHintScreen", "meta": {"screen_info": "cloud_msg"}})
         elif self.cur == 9:
-            # 设置
+            # Set up
             EventMesh.publish("load_screen", {"screen": "SettingsScreen"})
         else:
             pass
 
     def btn2_release(self):
-        # 返回
+        # Return
         EventMesh.publish("load_screen", {"screen": "MainScreen"})
 
     # def done_return(self):
@@ -765,13 +765,13 @@ class SettingsScreen(Screen):
         self.btn_list = []
         self.currentButton = None
         self.setting_menu_list = [
-            ["E:/static/scene_mode.png", "情景模式"],
-            ["E:/static/volnum.png", "音量设置"],
-            ["E:/static/icon_student_qrcode.png", "支付宝密码"],
-            ["E:/static/icon_setting_shutdown.png", "关机"],
-            ["E:/static/ota.png", "升级"],
-            ["E:/static/about.png", "关于设备"],
-            ["E:/static/icon_setting_imei.png", "绑定码"]
+            ["E:/static/scene_mode.png", "Scenario mode"],
+            ["E:/static/volnum.png", "Volume Setting "],
+            ["E:/static/icon_student_qrcode.png", "Alipay password"],
+            ["E:/static/icon_setting_shutdown.png", "Shut down"],
+            ["E:/static/ota.png", "Upgrade"],
+            ["E:/static/about.png", "About equipment"],
+            ["E:/static/icon_setting_imei.png", "Binding code"]
         ]
 
     def initialization(self):
@@ -818,7 +818,7 @@ class SettingsScreen(Screen):
             pass
 
     def btn2_release(self):
-        # 返回
+        # Return
         self.done_left_to_right()
 
     def done_left_to_right(self):
@@ -842,23 +842,23 @@ class PowerOffScreen(Screen):
 
     def img_bth_cb(self, event, mode):
         if not mode:
-            print("正在关机 1")
+            print("Shutting down  1")
             self.power_off()
         else:
-            print("取消")
+            print("Cancel")
             self.done_left_to_right()
 
     def power_off(self, topic=None, data=None):
-        print("正在关机 2")
+        print("Shutting down 2")
         lv.scr_load(power_off_img_screen)
-        print("正在关机 3")
+        print("Shutting down 3")
         self.power_down_timer.start(2 * 1000, 0, self.power_down_task)
 
     def power_down_task(self, args):
         Power.powerDown()
 
     def btn2_release(self):
-        # 返回
+        # Return
         self.done_left_to_right()
 
     def done_left_to_right(self):
@@ -867,7 +867,7 @@ class PowerOffScreen(Screen):
 
 class BindCodeScreen(Screen):
     """
-    设备信息
+    Equipment information
     """
     NAME = "BindCodeScreen"
     def __init__(self):
@@ -882,7 +882,7 @@ class BindCodeScreen(Screen):
         return True
 
     def btn2_release(self):
-        # 返回
+        # Return
         self.done_left_to_right()
 
     def done_left_to_right(self):
@@ -908,7 +908,7 @@ class BindCodeScreen(Screen):
 
 class AboutScreen(Screen):
     """
-    设备信息
+    Equipment information
     """
     NAME = "AboutScreen"
     def __init__(self):
@@ -916,9 +916,9 @@ class AboutScreen(Screen):
         self.meta = about_screen
         self.about_screen_info_label = about_screen_info_label
         self.imei = modem.getDevImei()
-        self.show_info = """型号:KE27S 软件版本:
+        self.show_info = """Model: KE27S software version:
 KE27S_KR_1.0.1
-硬件版本:K16_V1.0
+Hardware version:K16_V1.0
 IMEI:%s
 Time:22:00:35 2023-8-8
 """ % self.imei
@@ -928,7 +928,7 @@ Time:22:00:35 2023-8-8
         return True
 
     def btn2_release(self):
-        # 返回
+        # Return
         self.done_left_to_right()
 
     def done_left_to_right(self):
@@ -941,33 +941,33 @@ class NoContentHintScreen(Screen):
     def __init__(self):
         super().__init__()
         self.meta = no_content_hint
-        # 提示内容
+        # Prompt content
         self.no_content_hint_label = no_content_hint_label
-        # 标题
+        # Title
         self.no_content_hint_title_label = no_content_hint_title_label
 
     def initialization(self):
         screen_info = self.meta_info.get("screen_info")
         if screen_info == "call_log":
-            show_msg = "无通话记录"
+            show_msg = "No call records"
         elif screen_info == "msg":
-            self.no_content_hint_title_label.set_text("信息")
-            show_msg = "暂无消息"
+            self.no_content_hint_title_label.set_text("Information")
+            show_msg = "No news at the moment"
         elif screen_info == "cloud_msg":
-            self.no_content_hint_title_label.set_text("平台信息")
-            show_msg = "暂无平台信息"
+            self.no_content_hint_title_label.set_text("Platform Information")
+            show_msg = "No platform information available at the moment"
         elif screen_info == "phone_book":
-            show_msg = "无联系人\n请先在公众号添加"
+            show_msg = "No contacts\nPlease add them on the official account first"
         else:
-            show_msg = "暂无信息"
+            show_msg = "No information available at the moment"
         self.no_content_hint_label.set_text(show_msg)
 
     def btn2_release(self):
-        # 返回
+        # Return
         self.done_left_to_right()
 
     def done_left_to_right(self):
-        # 左滑菜单
+        # Left swipe menu
         EventMesh.publish("load_screen", {"screen": "MenuScreen"})
         self.no_content_hint_label.set_text("")
         self.no_content_hint_title_label.set_text("")
@@ -980,7 +980,7 @@ class UI(object):
         self.lv = lv
         self.lcd_gpio = lcd_gpio
         self.lcd = lcd_obj
-        # 息屏时间
+        # Off screen time
         self.lcd_sleep_time = 60
         self.lcd_sleep_timer = osTimer()
         self.main_flag = 0
@@ -1032,7 +1032,7 @@ class UI(object):
         print("btn_release: {}".format(event))
         if not self.lcd_state_manage():
             print("btn_release return")
-            # 有按键动作重置息屏时间
+            # There is a button action to reset the screen shutdown time
             return
         if event == "btn1_release":
             self.screen.btn1_release()
@@ -1054,7 +1054,7 @@ class UI(object):
     def load_screen(self, topic, msg):
         for scr in self.screen_list:
             if scr.NAME == msg["screen"]:
-                # 每次屏幕切换开始息屏倒计时
+                # Start the countdown to turn off the screen every time the screen switches
                 if scr.NAME != self.screen.NAME and self.screen.NAME not in ["call", ]:
                     scr.last_screen_info = {"screen": self.screen.NAME}
                 self.screen = scr
@@ -1069,7 +1069,7 @@ class UI(object):
                 self.lv.scr_load(self.screen.get_meta())
 
     def lcd_state_manage(self, event=None, mode=None):
-        """LCD 状态管理"""
+        """LCD status management"""
         if self.lcd_state():
             self.lcd_sleep_timer_restart()
             return True
@@ -1079,34 +1079,34 @@ class UI(object):
 
     def lcd_on(self):
         self.lcd_gpio.write(1)
-        # EventMesh.publish("lower_power", 1)  # 0 进入休眠 1 退出休眠
+        # EventMesh.publish("lower_power", 1)  # 0 enters sleep mode 1 exits sleep mode
         self.lcd.lcd_display_on()
         self.lcd_sleep_timer_start()
 
     def lcd_off(self):
         self.lcd_gpio.write(0)
-        # EventMesh.publish("lower_power", 0)  # 0 进入休眠 1 退出休眠
+        # EventMesh.publish("lower_power", 0)  # 0 enters sleep mode 1 exits sleep mode
         self.lcd.lcd_display_off()
-        self.lcd_sleep_timer_stop()  # 0 关闭息屏定时器 1 开启息屏定时器
+        self.lcd_sleep_timer_stop()  # 0 Turn off the screen timer 1 Turn on the screen timer
 
     def lcd_state(self):
         return self.lcd_gpio.read()
 
     def auto_lcd_switch(self, *args):
-        # 未息屏状态，熄灭屏幕
+        # Unbound screen status, turn off the screen
         if self.lcd_state():
             self.lcd_off()
 
     def lcd_sleep_timer_start(self, event=None, mode=None):
-        """开启息屏定时器"""
+        """Activate the screen shutdown timer"""
         self.lcd_sleep_timer.start(self.lcd_sleep_time * 1000, 1, self.auto_lcd_switch)
 
     def lcd_sleep_timer_stop(self, event=None, mode=None):
-        """息屏"""
+        """Off screen"""
         self.lcd_sleep_timer.stop()
 
     def lcd_sleep_timer_restart(self, event=None, mode=None):
-        """重置息屏Timer"""
+        """Reset the screen shutdown timer"""
         self.lcd_sleep_timer_stop()
         self.lcd_sleep_timer_start()
 

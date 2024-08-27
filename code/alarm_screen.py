@@ -61,11 +61,11 @@ class AlarmScreen(BaseScreen):
         current_alarm_text = lv.label(current_alarm_btn)
         current_alarm_text.set_pos(10, 18)
         current_alarm_text.set_size(200, 35)
-        current_alarm_text.set_text("当前报警")
+        current_alarm_text.set_text("Current alarm")
         current_alarm_text.set_long_mode(lv.label.LONG.WRAP)
         current_alarm_text.set_style_text_align(lv.TEXT_ALIGN.CENTER, 0)
         current_alarm_text.add_style(
-            (STYLE_SCREEN.style_siyuan_18_orange_btn if self.alarm_menu_module == 0 else STYLE_SCREEN.style_siyuan_18_grey), lv.PART.MAIN | lv.STATE.DEFAULT
+            (STYLE_SCREEN.style_montserrat_14_orange_btn if self.alarm_menu_module == 0 else STYLE_SCREEN.style_montserrat_14_grey), lv.PART.MAIN | lv.STATE.DEFAULT
         )
         self.current_alarm_text = current_alarm_text
 
@@ -78,11 +78,11 @@ class AlarmScreen(BaseScreen):
         history_alarm_text = lv.label(history_alarm_btn)
         history_alarm_text.set_pos(20, 18)
         history_alarm_text.set_size(200, 35)
-        history_alarm_text.set_text("历史报警")
+        history_alarm_text.set_text("Historical alarms")
         history_alarm_text.set_long_mode(lv.label.LONG.WRAP)
         history_alarm_text.set_style_text_align(lv.TEXT_ALIGN.CENTER, 0)
         history_alarm_text.add_style(
-            (STYLE_SCREEN.style_siyuan_18_orange_btn if self.alarm_menu_module == 1 else STYLE_SCREEN.style_siyuan_18_grey), lv.PART.MAIN | lv.STATE.DEFAULT
+            (STYLE_SCREEN.style_montserrat_14_orange_btn if self.alarm_menu_module == 1 else STYLE_SCREEN.style_montserrat_14_grey), lv.PART.MAIN | lv.STATE.DEFAULT
         )
         self.history_alarm_text = history_alarm_text
 
@@ -92,11 +92,11 @@ class AlarmScreen(BaseScreen):
         alarms_module.add_style(STYLE_SCREEN.style_bg_white_border, lv.PART.MAIN | lv.STATE.DEFAULT)
         self.alarms_module = alarms_module
 
-        self.alarm_item_create("直流反接", "1028", "紧急", "1.检查直流接线是否接反,2.重启逆变器,3.如果仍未排除,请联系厂家客服", True)
-        self.alarm_item_create("电网过压", "1010", "提示", "XXX", False)
-        self.alarm_item_create("电网过压01", "1010", "提示", "XXX", False)
-        self.alarm_item_create("电网过压02", "1010", "提示", "XXX", False)
-        self.alarm_item_create("电网过压03", "1010", "提示", "XXX", False)
+        self.alarm_item_create("DC reverse connection", "1028", "Urgent", "1. Check if the DC wiring is reversed.\n2. Restart the inverter.\n3. If the issue persists, please contact the manufacturer's customer service.", True)
+        self.alarm_item_create("Overvoltage in the power grid", "1010", "Tips", "XXX", False)
+        self.alarm_item_create("Overvoltage in the power grid 01", "1010", "Tips", "XXX", False)
+        self.alarm_item_create("Overvoltage in the power grid 02", "1010", "Tips", "XXX", False)
+        self.alarm_item_create("Overvoltage in the power grid 03", "1010", "Tips", "XXX", False)
 
         self.current_alarm_btn.add_event_cb(lambda e: self.alarm_menu_btn_event_cb(e, 0), lv.EVENT.PRESSED, None)
         self.history_alarm_btn.add_event_cb(lambda e: self.alarm_menu_btn_event_cb(e, 1), lv.EVENT.PRESSED, None)
@@ -112,10 +112,10 @@ class AlarmScreen(BaseScreen):
         alarms_item_tip1 = lv.label(alarms_item)
         alarms_item_tip1.set_pos(10, 10)
         alarms_item_tip1.set_size(100, 20)
-        alarms_item_tip1.set_text("报警内容:")
+        alarms_item_tip1.set_text("Content:")
         alarms_item_tip1.set_long_mode(lv.label.LONG.WRAP)
         alarms_item_tip1.set_style_text_align(lv.TEXT_ALIGN.CENTER, 0)
-        alarms_item_tip1.add_style(STYLE_SCREEN.style_siyuan_18_grey, lv.PART.MAIN | lv.STATE.DEFAULT)
+        alarms_item_tip1.add_style(STYLE_SCREEN.style_montserrat_14_grey, lv.PART.MAIN | lv.STATE.DEFAULT)
 
         alarms_item_tip1_val = lv.label(alarms_item)
         alarms_item_tip1_val.set_pos(150, 10)
@@ -123,15 +123,15 @@ class AlarmScreen(BaseScreen):
         alarms_item_tip1_val.set_text(content)
         alarms_item_tip1_val.set_long_mode(lv.label.LONG.WRAP)
         alarms_item_tip1_val.set_style_text_align(lv.TEXT_ALIGN.LEFT, 0)
-        alarms_item_tip1_val.add_style(STYLE_SCREEN.style_siyuan_18_grey, lv.PART.MAIN | lv.STATE.DEFAULT)
+        alarms_item_tip1_val.add_style(STYLE_SCREEN.style_montserrat_14_grey, lv.PART.MAIN | lv.STATE.DEFAULT)
 
         alarms_item_tip2 = lv.label(alarms_item)
         alarms_item_tip2.set_pos(10, 35)
         alarms_item_tip2.set_size(100, 20)
-        alarms_item_tip2.set_text("报警代码:")
+        alarms_item_tip2.set_text("Code:")
         alarms_item_tip2.set_long_mode(lv.label.LONG.WRAP)
         alarms_item_tip2.set_style_text_align(lv.TEXT_ALIGN.CENTER, 0)
-        alarms_item_tip2.add_style(STYLE_SCREEN.style_siyuan_18_grey, lv.PART.MAIN | lv.STATE.DEFAULT)
+        alarms_item_tip2.add_style(STYLE_SCREEN.style_montserrat_14_grey, lv.PART.MAIN | lv.STATE.DEFAULT)
 
         alarms_item_tip2_val = lv.label(alarms_item)
         alarms_item_tip2_val.set_pos(150, 35)
@@ -139,15 +139,15 @@ class AlarmScreen(BaseScreen):
         alarms_item_tip2_val.set_text(code)
         alarms_item_tip2_val.set_long_mode(lv.label.LONG.WRAP)
         alarms_item_tip2_val.set_style_text_align(lv.TEXT_ALIGN.LEFT, 0)
-        alarms_item_tip2_val.add_style(STYLE_SCREEN.style_siyuan_18_grey, lv.PART.MAIN | lv.STATE.DEFAULT)
+        alarms_item_tip2_val.add_style(STYLE_SCREEN.style_montserrat_14_grey, lv.PART.MAIN | lv.STATE.DEFAULT)
 
         alarms_item_tip3 = lv.label(alarms_item)
         alarms_item_tip3.set_pos(10, 60)
         alarms_item_tip3.set_size(100, 20)
-        alarms_item_tip3.set_text("报警等级:")
+        alarms_item_tip3.set_text("Level:")
         alarms_item_tip3.set_long_mode(lv.label.LONG.WRAP)
         alarms_item_tip3.set_style_text_align(lv.TEXT_ALIGN.CENTER, 0)
-        alarms_item_tip3.add_style(STYLE_SCREEN.style_siyuan_18_grey, lv.PART.MAIN | lv.STATE.DEFAULT)
+        alarms_item_tip3.add_style(STYLE_SCREEN.style_montserrat_14_grey, lv.PART.MAIN | lv.STATE.DEFAULT)
 
         alarms_item_tip3_val = lv.label(alarms_item)
         alarms_item_tip3_val.set_pos(150, 60)
@@ -155,29 +155,29 @@ class AlarmScreen(BaseScreen):
         alarms_item_tip3_val.set_text(level)
         alarms_item_tip3_val.set_long_mode(lv.label.LONG.WRAP)
         alarms_item_tip3_val.set_style_text_align(lv.TEXT_ALIGN.LEFT, 0)
-        show_color = STYLE_SCREEN.style_siyuan_18_red if level == "紧急" else STYLE_SCREEN.style_siyuan_18_orange
+        show_color = STYLE_SCREEN.style_montserrat_14_red if level == "Urgent" else STYLE_SCREEN.style_montserrat_14_orange
         alarms_item_tip3_val.add_style(show_color, lv.PART.MAIN | lv.STATE.DEFAULT)
 
         alarms_item_tip4 = lv.label(alarms_item)
         alarms_item_tip4.set_pos(10, 85)
         alarms_item_tip4.set_size(100, 20)
-        alarms_item_tip4.set_text("处理方法:")
+        alarms_item_tip4.set_text("Method:")
         alarms_item_tip4.set_long_mode(lv.label.LONG.WRAP)
         alarms_item_tip4.set_style_text_align(lv.TEXT_ALIGN.CENTER, 0)
-        alarms_item_tip4.add_style(STYLE_SCREEN.style_siyuan_18_grey, lv.PART.MAIN | lv.STATE.DEFAULT)
+        alarms_item_tip4.add_style(STYLE_SCREEN.style_montserrat_14_grey, lv.PART.MAIN | lv.STATE.DEFAULT)
         getattr(alarms_item_tip4, ("add_flag" if not show else "clear_flag"))(lv.obj.FLAG.HIDDEN)
 
         alarms_item_tip4_val = lv.label(alarms_item)
         alarms_item_tip4_val.set_pos(150, 85)
-        alarms_item_tip4_val.set_size(300, 60)
+        alarms_item_tip4_val.set_size(300, 80)
         alarms_item_tip4_val.set_text(approach)
         alarms_item_tip4_val.set_long_mode(lv.label.LONG.WRAP)
         alarms_item_tip4_val.set_style_text_align(lv.TEXT_ALIGN.LEFT, 0)
-        alarms_item_tip4_val.add_style(STYLE_SCREEN.style_siyuan_18_grey, lv.PART.MAIN | lv.STATE.DEFAULT)
+        alarms_item_tip4_val.add_style(STYLE_SCREEN.style_montserrat_14_grey, lv.PART.MAIN | lv.STATE.DEFAULT)
         getattr(alarms_item_tip4_val, ("add_flag" if not show else "clear_flag"))(lv.obj.FLAG.HIDDEN)
 
         alarms_item_img = lv.img(alarms_item)
-        alarms_item_img.set_pos(222, (155 if show else 105))
+        alarms_item_img.set_pos(222, (168 if show else 105))
         alarms_item_img.set_size(32, 32)
         alarms_item_img.add_flag(lv.obj.FLAG.CLICKABLE)
         alarms_item_img.set_src(MEDIA_DIR + ("up.png" if show else "down.png"))
@@ -197,16 +197,16 @@ class AlarmScreen(BaseScreen):
         try:
             if self.alarm_menu_module != mode:
                 self.history_alarm_text.remove_style(
-                    (STYLE_SCREEN.style_siyuan_18_orange_btn if mode == 0 else STYLE_SCREEN.style_siyuan_18_grey), lv.PART.MAIN | lv.STATE.DEFAULT
+                    (STYLE_SCREEN.style_montserrat_14_orange_btn if mode == 0 else STYLE_SCREEN.style_montserrat_14_grey), lv.PART.MAIN | lv.STATE.DEFAULT
                 )
                 self.history_alarm_text.add_style(
-                    (STYLE_SCREEN.style_siyuan_18_grey if mode == 0 else STYLE_SCREEN.style_siyuan_18_orange_btn), lv.PART.MAIN | lv.STATE.DEFAULT
+                    (STYLE_SCREEN.style_montserrat_14_grey if mode == 0 else STYLE_SCREEN.style_montserrat_14_orange_btn), lv.PART.MAIN | lv.STATE.DEFAULT
                 )
                 self.current_alarm_text.remove_style(
-                    (STYLE_SCREEN.style_siyuan_18_grey if mode == 0 else STYLE_SCREEN.style_siyuan_18_orange_btn), lv.PART.MAIN | lv.STATE.DEFAULT
+                    (STYLE_SCREEN.style_montserrat_14_grey if mode == 0 else STYLE_SCREEN.style_montserrat_14_orange_btn), lv.PART.MAIN | lv.STATE.DEFAULT
                 )
                 self.current_alarm_text.add_style(
-                    (STYLE_SCREEN.style_siyuan_18_orange_btn if mode == 0 else STYLE_SCREEN.style_siyuan_18_grey), lv.PART.MAIN | lv.STATE.DEFAULT
+                    (STYLE_SCREEN.style_montserrat_14_orange_btn if mode == 0 else STYLE_SCREEN.style_montserrat_14_grey), lv.PART.MAIN | lv.STATE.DEFAULT
                 )
                 self.alarm_menu_module = mode
         except Exception as e:

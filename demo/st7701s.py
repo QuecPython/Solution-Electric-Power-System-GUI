@@ -1,5 +1,5 @@
 
-# 铀开发板自带屏幕
+# The uranium development board comes with a built-in screen
 init_480X854_local = (
 0x11,0,0,
 0xFF,120,5,0x77,0x01,0x00,0x00,0x10,
@@ -74,10 +74,10 @@ disp_drv = lv.disp_drv_t()
 disp_drv.init()
 disp_drv.draw_buf = disp_buf1
 disp_drv.flush_cb = mipilcd.lcd_write
-disp_drv.hor_res = 480              #此处基于实际的屏幕来设置水平分辨率
-disp_drv.ver_res = 854              #此处基于实际的屏幕来设置垂直分辨率
-# disp_drv.sw_rotate=1                #因为横屏，所以需要旋转
-# disp_drv.rotated = lv.DISP_ROT._270 #旋转角度
+disp_drv.hor_res = 480              #Here, the horizontal resolution is set based on the actual screen
+disp_drv.ver_res = 854              #Here, the vertical resolution is set based on the actual screen
+# disp_drv.sw_rotate=1                #Due to landscape display, rotation is required
+# disp_drv.rotated = lv.DISP_ROT._270 #Rotation angle
 disp_drv.register()
 
 indev_drv = lv.indev_drv_t()
@@ -104,19 +104,19 @@ label.add_style(style_bg,0)
 '''
 # def tp_cb(para):
 #     if(para == 0):
-#         print("-->")        #右滑
+#         print("-->")        #Right slide
 #     elif(para == 1):
-#         print("<--")        #左滑
+#         print("<--")        #Left slide
 #     elif(para == 2):
-#         print("^")          #上滑
+#         print("^")          #Up slide
 #     elif(para == 3):
-#         print("V")          #下滑
+#         print("V")          #Down slide
 #     elif(para == 4):
-#         print("return")     #返回。 触摸从左右边框滑动，类似安卓的返回方式
+#         print("return")     #return. Touch and slide from the left and right borders, similar to the Android return method
 #     elif(para == 5):
-#         print("CLICK")      #点击屏幕
+#         print("CLICK")      #Click on the screen
 #     elif(para == 6):
-#         print("error")      #返回错误
+#         print("error")      #Return error
 
 
 # tp_gt911.set_callback(tp_cb)
