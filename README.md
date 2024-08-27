@@ -1,6 +1,6 @@
 # Electric Power System GUI Solution
 
-[中文](https://github.com/QuecPython/Solution-Electric-Power-System-GUI/blob/master/README.md) | English
+[中文](https://github.com/QuecPython/Solution-Electric-Power-System-GUI/blob/gui_cn/README.md) | English
 
 ## Module
 
