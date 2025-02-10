@@ -53,5 +53,5 @@
 
 ## Project Usage Instructions
 
-1. It is recommended to use our company's **EC600UCNLB** uranium development board for hardware testing. The `SIO3&TE` toggle switch on the development board needs to be switched to `SIO3`, and all four switches of `3V3` in the `TP SW` control module need to be turned on to `ON`;
+1. It is recommended to use our company's **EC600UCNLB U235** development board for hardware testing. The `SIO3&TE` toggle switch on the development board needs to be switched to `SIO3`, and all four switches of `3V3` in the `TP SW` control module need to be turned on to `ON`;
 2. Use the firmware provided by our SPM for testing. The firmware provided by our company has already merged the project code into the firmware. After the device is directly burned, it will automatically run when turned on. You can also use our `QPYcom` tool for burning and secondary development on your own.
